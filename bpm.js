@@ -170,7 +170,7 @@ function _init(data, info) {
 
 
 
-            document.getElementById("selectTipFor").setAttribute("value", selectTipFor);
+            document.getElementById("selectTipFor").value = selectTipFor;
             document.getElementById("DatSol").setAttribute("value", DatSol);
             document.getElementById("Fornec").setAttribute("value", Fornec);
             document.getElementById("Cnpj").setAttribute("value", Cnpj);
