@@ -170,27 +170,17 @@
          </td>
        </tr>
      </table>
-     <!-- Boleto/Depósito/PIX -->
-     <!--<div class="row">
-       <div class="col-md-4">
-         <label for="ForPagBoleto" class="form-label">Boleto</label>
-         <div class="form-check">
-           <input class="form-check-input" type="checkbox" id="ForPagBoleto">
-         </div>
-       </div>
-       <div class="col-md-4">
-         <label for="ForPagDeposito" class="form-label">Depósito</label>
-         <div class="form-check">
-           <input class="form-check-input" type="checkbox" id="ForPagDeposito">
-         </div>
-       </div>
-       <div class="col-md-4">
-         <label for="ForPagPix" class="form-label">Pix</label>
-         <div class="form-check">
-           <input class="form-check-input" type="checkbox" id="ForPagPix">
-         </div>
-       </div>
-     </div>-->
+     <div class="row">
+      <div class="col-md-4">
+        <label required for="selectFormPag" class="form-label">Forma de Pagamento</label> 
+        <select disabled name="select" id="selectFormPag" class="form-select" aria-label="Default select example" onchange="javascript:ExibirFormaPagamento();">
+          <option selected>Selecione a Forma de Pagamento</option>
+          <option id="ForPagDep" value="Depósito">Depósito</option>
+          <option id="ForPagPix" value="Pix">Pix</option>
+          <option id="ForPagBol" value="Boleto">Boleto</option>
+        </select>
+      </div>
+    </div>
      <!-- Banco -->
      <div class="row">
        <div class="col-md-12">
@@ -254,10 +244,9 @@
        </div>
        <div class="col-md-3">
          <label for="VlrParUm" class="form-label">Valor Parcela 1</label>
-         <input id="VlrParUm" type="text" disabled
+         <input id="VlrParUm" type="text" disabled onKeyUp="mascaraMoeda(this, event)"
            class="form-control ng-pristine ng-untouched ng-scope ng-empty ng-valid-pattern ng-valid ng-valid-required"
            placeholder="Digite o valor da parcela 1" required>
-         <script type="text/javascript">$("#VlrParUm").mask("#.##0,00", { reverse: true });</script>
        </div>
        <div class="col-md-3">
          <label for="DatParUm" class="form-label">Data Parcela 1</label>
@@ -297,10 +286,9 @@
        </div>
        <div class="col-md-3">
          <label for="VlrParDois" class="form-label">Valor Parcela 2</label>
-         <input id="VlrParDois" type="text" disabled
+         <input id="VlrParDois" type="text" disabled onKeyUp="mascaraMoeda(this, event)"
            class="form-control ng-pristine ng-untouched ng-scope ng-empty ng-valid-pattern ng-valid ng-valid-required"
            placeholder="Digite o valor da parcela 2">
-         <script type="text/javascript">$("#VlrParDois").mask("#.##0,00", { reverse: true });</script>
        </div>
        <div class="col-md-3">
          <label for="DatParDois" class="form-label">Data Parcela 2</label>
@@ -340,10 +328,9 @@
        </div>
        <div class="col-md-3">
          <label for="VlrParTres" class="form-label">Valor Parcela 3</label>
-         <input id="VlrParTres" type="text" disabled
+         <input id="VlrParTres" type="text" disabled onKeyUp="mascaraMoeda(this, event)"
            class="form-control ng-pristine ng-untouched ng-scope ng-empty ng-valid-pattern ng-valid ng-valid-required"
            placeholder="Digite o valor da parcela 3">
-         <script type="text/javascript">$("#VlrParTres").mask("#.##0,00", { reverse: true });</script>
        </div>
        <div class="col-md-3">
          <label for="DatParTres" class="form-label">Data Parcela 3</label>
@@ -369,10 +356,9 @@
        </div>
        <div class="col-md-3">
          <label for="VlrParQuatro" class="form-label">Valor Parcela 4</label>
-         <input id="VlrParQuatro" type="text" disabled
+         <input id="VlrParQuatro" type="text" disabled onKeyUp="mascaraMoeda(this, event)"
            class="form-control ng-pristine ng-untouched ng-scope ng-empty ng-valid-pattern ng-valid ng-valid-required"
            placeholder="Digite o valor da parcela 4">
-         <script type="text/javascript">$("#VlrParQuatro").mask("#.##0,00", { reverse: true });</script>
        </div>
        <div class="col-md-3">
          <label for="DatParQuatro" class="form-label">Data Parcela 4</label>
@@ -398,10 +384,9 @@
        </div>
        <div class="col-md-3">
          <label for="VlrParCinco" class="form-label">Valor Parcela 5</label>
-         <input id="VlrParCinco" type="text" disabled
+         <input id="VlrParCinco" type="text" disabled onKeyUp="mascaraMoeda(this, event)"
            class="form-control ng-pristine ng-untouched ng-scope ng-empty ng-valid-pattern ng-valid ng-valid-required"
            placeholder="Digite o valor da parcela 5">
-         <script type="text/javascript">$("#VlrParCinco").mask("#.##0,00", { reverse: true });</script>
        </div>
        <div class="col-md-3">
          <label for="DatParCinco" class="form-label">Data Parcela 5</label>
@@ -427,10 +412,9 @@
        </div>
        <div class="col-md-3">
          <label for="VlrParSeis" class="form-label">Valor Parcela 6</label>
-         <input id="VlrParSeis" type="text" disabled
+         <input id="VlrParSeis" type="text" disabled onKeyUp="mascaraMoeda(this, event)"
            class="form-control ng-pristine ng-untouched ng-scope ng-empty ng-valid-pattern ng-valid ng-valid-required"
            placeholder="Digite o valor da parcela 6">
-         <script type="text/javascript">$("#VlrParSeis").mask("#.##0,00", { reverse: true });</script>
        </div>
        <div class="col-md-3">
          <label for="DatParSeis" class="form-label">Data Parcela 6</label>
@@ -456,10 +440,9 @@
        </div>
        <div class="col-md-3">
          <label for="VlrParSete" class="form-label">Valor Parcela 7</label>
-         <input id="VlrParSete" type="text" disabled
+         <input id="VlrParSete" type="text" disabled onKeyUp="mascaraMoeda(this, event)"
            class="form-control ng-pristine ng-untouched ng-scope ng-empty ng-valid-pattern ng-valid ng-valid-required"
            placeholder="Digite o valor da parcela 7">
-         <script type="text/javascript">$("#VlrParSete").mask("#.##0,00", { reverse: true });</script>
        </div>
        <div class="col-md-3">
          <label for="DatParSete" class="form-label">Data Parcela 7</label>
@@ -485,10 +468,9 @@
        </div>
        <div class="col-md-3">
          <label for="VlrParOito" class="form-label">Valor Parcela 8</label>
-         <input id="VlrParOito" type="text" disabled
+         <input id="VlrParOito" type="text" disabled onKeyUp="mascaraMoeda(this, event)"
            class="form-control ng-pristine ng-untouched ng-scope ng-empty ng-valid-pattern ng-valid ng-valid-required"
            placeholder="Digite o valor da parcela 8">
-         <script type="text/javascript">$("#VlrParOito").mask("#.##0,00", { reverse: true });</script>
        </div>
        <div class="col-md-3">
          <label for="DatParOito" class="form-label">Data Parcela 8</label>
@@ -514,10 +496,9 @@
        </div>
        <div class="col-md-3">
          <label for="VlrParNove" class="form-label">Valor Parcela 9</label>
-         <input id="VlrParNove" type="text" disabled
+         <input id="VlrParNove" type="text" disabled onKeyUp="mascaraMoeda(this, event)"
            class="form-control ng-pristine ng-untouched ng-scope ng-empty ng-valid-pattern ng-valid ng-valid-required"
            placeholder="Digite o valor da parcela 9">
-         <script type="text/javascript">$("#VlrParNove").mask("#.##0,00", { reverse: true });</script>
        </div>
        <div class="col-md-3">
          <label for="DatParNove" class="form-label">Data Parcela 9</label>
@@ -543,10 +524,9 @@
        </div>
        <div class="col-md-3">
          <label for="VlrParDez" class="form-label">Valor Parcela 10</label>
-         <input id="VlrParDez" type="text" disabled
+         <input id="VlrParDez" type="text" disabled onKeyUp="mascaraMoeda(this, event)"
            class="form-control ng-pristine ng-untouched ng-scope ng-empty ng-valid-pattern ng-valid ng-valid-required"
            placeholder="Digite o valor da parcela 10">
-         <script type="text/javascript">$("#VlrParDez").mask("#.##0,00", { reverse: true });</script>
        </div>
        <div class="col-md-3">
          <label for="DatParDez" class="form-label">Data Parcela 10</label>
@@ -572,10 +552,9 @@
        </div>
        <div class="col-md-3">
          <label for="VlrParOnze" class="form-label">Valor Parcela 11</label>
-         <input id="VlrParOnze" type="text" disabled
+         <input id="VlrParOnze" type="text" disabled onKeyUp="mascaraMoeda(this, event)"
            class="form-control ng-pristine ng-untouched ng-scope ng-empty ng-valid-pattern ng-valid ng-valid-required"
            placeholder="Digite o valor da parcela 11">
-         <script type="text/javascript">$("#VlrParOnze").mask("#.##0,00", { reverse: true });</script>
        </div>
        <div class="col-md-3">
          <label for="DatParOnze" class="form-label">Data Parcela 11</label>
@@ -601,10 +580,9 @@
        </div>
        <div class="col-md-3">
          <label for="VlrParDoze" class="form-label">Valor Parcela 12</label>
-         <input id="VlrParDoze" type="text" disabled
+         <input id="VlrParDoze" type="text" disabled onKeyUp="mascaraMoeda(this, event)"
            class="form-control ng-pristine ng-untouched ng-scope ng-empty ng-valid-pattern ng-valid ng-valid-required"
            placeholder="Digite o valor da parcela 12">
-         <script type="text/javascript">$("#VlrParDoze").mask("#.##0,00", { reverse: true });</script>
        </div>
        <div class="col-md-3">
          <label for="DatParDoze" class="form-label">Data Parcela 12</label>
@@ -633,9 +611,8 @@
      <div class="row">
        <div class="col-md-12">
          <label for="TotalPagarPar" class="form-label">Total a Pagar:</label>
-         <input disabled id="TotalPagarPar" type="text"
+         <input disabled id="TotalPagarPar" type="text" onKeyUp="mascaraMoeda(this, event)"
            class="form-control ng-pristine ng-untouched ng-scope ng-empty ng-valid-pattern ng-valid ng-valid-required">
-         <script type="text/javascript">$("#TotalPagarPar").mask("#.##0,00", { reverse: true });</script>
        </div>
      </div>
     <!---------------------------------------------------------------------------------------------------->
