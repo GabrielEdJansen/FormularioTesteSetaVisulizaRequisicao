@@ -568,6 +568,12 @@ function _init(data, info) {
             const ForPagConta = map.get("ForPagConta");
             const ForPagChavePix = map.get("ForPagChavePix");
 
+            const NomSuper = map.get("NomSuper");
+            const SupAproJusti = map.get("SupAproJusti");
+            const NomDir = map.get("NomDir");
+            const DirAproJusti = map.get("DirAproJusti");
+            
+
 
 
             document.getElementById("selectTipFor").value = selectTipFor;
@@ -648,6 +654,11 @@ function _init(data, info) {
             document.getElementById("ForPagAgencia").setAttribute("value", ForPagAgencia);
             document.getElementById("ForPagConta").setAttribute("value", ForPagConta);
             document.getElementById("ForPagChavePix").setAttribute("value", ForPagChavePix);
+
+            document.getElementById("NomSuper").setAttribute("value", NomSuper);
+            document.getElementById("SupAproJusti").setAttribute("value", SupAproJusti);
+            document.getElementById("NomDir").setAttribute("value", NomDir);
+            document.getElementById("DirAproJusti").setAttribute("value", DirAproJusti);       
 
         }
     });
@@ -744,6 +755,11 @@ function _saveData(data, info) {
     newData.ForPagAgencia = document.getElementById("ForPagAgencia").value;
     newData.ForPagConta = document.getElementById("ForPagConta").value;
     newData.ForPagChavePix = document.getElementById("ForPagChavePix").value;
+
+    newData.NomSuper = document.getElementById("NomSuper").value;
+    newData.SupAproJusti = document.getElementById("SupAproJusti").value;
+    newData.NomDir = document.getElementById("NomDir").value;
+    newData.DirAproJusti = document.getElementById("DirAproJusti").value; 
 
     console.log(newData);
     return {
