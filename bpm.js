@@ -39,7 +39,7 @@ function ExibirFormaPagamento() {
         eBol12.style.display = 'none';
 
     }
-    if (document.getElementById("selectFormPag").value == 'Depósito') {
+    if (document.getElementById("selectFormPag").value == 'Deposito') {
         let eVal = document.getElementById('PagBanco');
 
         eVal.style.display = 'flex';
