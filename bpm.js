@@ -5,14 +5,6 @@ function ExibirFormaPagamento() {
 
         eVal2.style.display = 'flex';
 
-        let eVal = document.getElementById('PagBanco');
-
-        eVal.style.display = 'none';
-
-        let eVal1 = document.getElementById('PagBancoAge');
-
-        eVal1.style.display = 'none';
-
         let eBol1 = document.getElementById('parcela1Bol');
         eBol1.style.display = 'none';
         let eBol2 = document.getElementById('parcela2Bol');
@@ -40,13 +32,6 @@ function ExibirFormaPagamento() {
 
     }
     if (document.getElementById("selectFormPag").value == 'Deposito') {
-        let eVal = document.getElementById('PagBanco');
-
-        eVal.style.display = 'flex';
-
-        let eVal1 = document.getElementById('PagBancoAge');
-
-        eVal1.style.display = 'flex';
 
         let eVal2 = document.getElementById('PagPix');
 
@@ -82,16 +67,6 @@ function ExibirFormaPagamento() {
         let eVal2 = document.getElementById('PagPix');
 
         eVal2.style.display = 'none';
-
-        let eVal = document.getElementById('PagBanco');
-
-        eVal.style.display = 'none';
-
-        let eVal1 = document.getElementById('PagBancoAge');
-
-        eVal1.style.display = 'none';
-
-
 
         let eBol = document.getElementById('parcela1Bol');
 
@@ -563,9 +538,6 @@ function _init(data, info) {
             const CodBolDoze = map.get("CodBolDoze");
 
             const TotalPagarPar = map.get("TotalPagarPar");
-            const ForPagBanco = map.get("ForPagBanco");
-            const ForPagAgencia = map.get("ForPagAgencia");
-            const ForPagConta = map.get("ForPagConta");
             const ForPagChavePix = map.get("ForPagChavePix");
 
             const NomSuper = map.get("NomSuper");
@@ -650,9 +622,6 @@ function _init(data, info) {
             document.getElementById("CodBolDoze").setAttribute("value", CodBolDoze);
 
             document.getElementById("TotalPagarPar").setAttribute("value", TotalPagarPar);
-            document.getElementById("ForPagBanco").setAttribute("value", ForPagBanco);
-            document.getElementById("ForPagAgencia").setAttribute("value", ForPagAgencia);
-            document.getElementById("ForPagConta").setAttribute("value", ForPagConta);
             document.getElementById("ForPagChavePix").setAttribute("value", ForPagChavePix);
 
             document.getElementById("NomSuper").setAttribute("value", NomSuper);
@@ -751,9 +720,6 @@ function _saveData(data, info) {
     newData.CodBolDoze = document.getElementById("CodBolDoze").value;
 
     newData.TotalPagarPar = document.getElementById("TotalPagarPar").value;
-    newData.ForPagBanco = document.getElementById("ForPagBanco").value;
-    newData.ForPagAgencia = document.getElementById("ForPagAgencia").value;
-    newData.ForPagConta = document.getElementById("ForPagConta").value;
     newData.ForPagChavePix = document.getElementById("ForPagChavePix").value;
 
     newData.NomSuper = document.getElementById("NomSuper").value;
